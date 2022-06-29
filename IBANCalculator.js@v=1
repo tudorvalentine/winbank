@@ -1,0 +1,301 @@
+﻿String.prototype.removeSpacesAndDashes = function () {
+    var result = this.replace(/-|\s/g, '');
+    return result;
+}
+
+var httpModule = (function () {
+    var getJsonData = function (url, param, callback, errorcallback, alwayscallback) {
+        $.ajax({
+            url: url,
+            crossDomain: true,
+            dataType: "json",
+            jsonp: false,
+            type: "POST",
+            data: param
+        })
+        .then(function (data) {
+            if (callback)
+                callback(data);
+        })
+        .fail(function (XMLHttpRequest, textStatus, errorThrown) {
+            if (errorcallback)
+                errorcallback(XMLHttpRequest, textStatus, errorThrown);
+        })
+        .always(function () {
+            if (alwayscallback) {
+                alwayscallback();
+            }
+        });
+    };
+    function verifyIban(parameters, callback, always) {
+        var apiUrl = constantsModule.apiUrl == null ? 'https://e-banking.winbank.gr/Api' : constantsModule.apiUrl;
+        getJsonData(apiUrl + '/Lookups/VerifyIban', parameters,
+            callback,
+            function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(errorThrown);
+            },
+            always);
+    }
+    function getAccountIban(parameters, callback, always) {
+        var apiUrl = constantsModule.apiUrl == null ? 'https://e-banking.winbank.gr/Api' : constantsModule.apiUrl;
+        getJsonData(apiUrl + '/Lookups/GetAccountIban', parameters,
+            callback,
+            function (XMLHttpRequest, textStatus, errorThrown) {
+                alert(errorThrown);
+            },
+            always);
+    }
+    return {
+        verifyIban: verifyIban,
+        getAccountIban: getAccountIban
+    }
+})();
+
+var messagesModule = (function () {
+    var accountValidationMessage = function (isFilled, isLengthRight) {
+        if (!isFilled) {
+            return literalsModule.accountRequired;
+        }
+        else if (isFilled && !isLengthRight) {
+            return literalsModule.account13digits;
+        }
+        return '';
+    }
+    var ibanValidationMessage = function (isFilled, isLengthRight) {
+        if (!isFilled) {
+            return literalsModule.ibanRequired;
+        }
+        else if (isFilled && !isLengthRight) {
+            return literalsModule.ibanLength;
+        }
+        return '';
+    }
+    return {
+        accountValidationMessage: accountValidationMessage,
+        ibanValidationMessage: ibanValidationMessage
+    }
+})();
+
+var serviceModule = (function () {
+    var clearMassConvertForm = function () {
+        $("#" + captchaConstants.txtId).val('');
+        var fileInput = $("#file");
+        var divWithFileName = fileInput.prev();
+        fileInput.val('');
+        divWithFileName.html(literalsModule.chooseFile);
+        $("#txtEmail").val('');
+    };
+    var submitAccountToIBANConvertForm = function (el) {
+        elementsModule.disableElement(el);
+        var txtField = elementsModule.findClosestText(el);
+        var originalTxtValue = $.trim(txtField.val()).removeSpacesAndDashes();
+        var txtValue = $.trim(txtField.val()).removeSpacesAndDashes();
+        txtField.val(txtValue);
+        var valParams = { element: el, minLength: 13, maxLength: 13, regex: constantsModule.numbersOnlyRegex, message: messagesModule.accountValidationMessage };
+        var isValid = validateSimple(el, validateModule.validateAccountToIBANConvertForm, valParams, literalsModule.accountRequired)
+        if (!isValid) {
+            elementsModule.enableElement(el);
+            return false;
+        }
+
+        httpModule.getAccountIban(
+            { AccountNumber: txtValue, CountryCode: "GR" },
+            function (data) {
+                if (data) {
+                    if (data.Error) {
+                        var errorMessageLog = jQuery.validator.format(literalsModule.errorInCommunicationLog, data.Error.ErrorDescription);
+                        var errorMessage = data.Error.ErrorDescription;
+                        elementsModule.showErrorMessage(el, errorMessage);
+                        return;
+                    }
+                    var successMessage = jQuery.validator.format(literalsModule.ibanConversion, data.Body.Iban);
+                    elementsModule.showSuccessMessage(el, successMessage);
+                }
+                else {
+                    alert(constants.errorNoDataReturned);
+                }
+            },
+            function () {
+                elementsModule.enableElement(el);
+            });
+    };
+    var submitIBANVerificationForm = function (el) {
+        elementsModule.disableElement(el);
+        var txtField = elementsModule.findClosestText(el);
+        var txtValue = $.trim(txtField.val()).removeSpacesAndDashes();
+        var valParams = { element: el, minLength: 1, maxLength: 35, regex: constantsModule.ibanRegex, message: messagesModule.ibanValidationMessage };
+        var isValid = validateSimple(el, validateModule.validateIBANVerificationForm, valParams, literalsModule.ibanRequired);
+        if (!isValid) {
+            elementsModule.enableElement(el);
+            return false;
+        }
+        httpModule.verifyIban(
+             { IbanInput: txtValue },
+             function (data) {
+                 if (data) {
+                     if (data.Error) {
+                         var errorMessageLog = jQuery.validator.format(literalsModule.errorInCommunicationLog, data.Error.ErrorDescription);
+                         var errorMessage = literalsModule.errorInCommunication;
+                         elementsModule.showErrorMessage(el, errorMessage);
+                         return;
+                     }
+                     if (data.Body.IbanValid) {
+                         var successMessage = jQuery.validator.format(literalsModule.ibanValid, data.Body.IbanInput);
+                         elementsModule.showSuccessMessage(el, successMessage);
+                         return;
+                     }
+                     var errorMessage = jQuery.validator.format(literalsModule.errorInvalidIban, data.Body.IbanInput);
+                     elementsModule.showErrorMessage(el, errorMessage);
+                 }
+                 else {
+                     alert(literalsModule.errorNoDataReturned);
+                 }
+
+             },
+             function () {
+                 elementsModule.enableElement(el);
+             });
+    }
+    var validateSimple = function (el, validationCall, validateParams, errorMessage, serviceCall, serviceCallParams) {
+        if (typeof (validationCall) !== 'function') {
+            alert('Functions not provided!');
+            return false;
+        }
+        var validationRes = validationCall(validateParams);
+        var textField = elementsModule.findClosestText(el);
+        var resultsDiv = elementsModule.findClosestResultDiv(el);
+        if (!validationRes.isValid) {
+            elementsModule.showErrorMessage(el, validationRes.validationMsg);
+            elementsModule.focus(textField);
+            elementsModule.redBorder(textField);
+            return false;
+        };
+        elementsModule.removeErrorClass(el);
+        elementsModule.removeRedBorder(textField);
+        $(resultsDiv).addClass(constantsModule.hiddenClass);
+        return true;
+    }
+    return {
+        submitAccountToIBANConvertForm: submitAccountToIBANConvertForm,
+        submitIBANVerificationForm: submitIBANVerificationForm,
+        clearMassConvertForm: clearMassConvertForm
+    }
+})();
+
+var validateModule = (function () {
+    var validateAccountToIBANConvertForm = function (p) {
+        var isFilled = validateRequired(constantsModule.txtAccount);
+        var isLengthRight = validateLength(constantsModule.txtAccount, p.minLength, p.maxLength) && validateWithRegex(constantsModule.txtAccount, p.regex);
+        var isValid = isFilled && isLengthRight;
+        return { isValid: isValid, validationMsg: p.message(isFilled, isLengthRight) };
+    };
+    var validateIBANVerificationForm = function (p) {
+        var isFilled = validateRequired(constantsModule.verifyIban);
+        var isLengthRight = validateLength(constantsModule.verifyIban, p.minLength, p.maxLength) && validateWithRegex(constantsModule.verifyIban, p.regex);
+        var isValid = isFilled && isLengthRight;
+        return { isValid: isValid, validationMsg: p.message(isFilled, isLengthRight) };
+    }
+    var validateRequired = function (fieldId) {
+        var theValue = elementsModule.getTxtValue(fieldId);
+        if (theValue == null) return false;
+        var isValid = theValue.length > 0;
+        return isValid;
+    }
+    var validateLength = function (txtEl, minLength, maxLength) {
+        if (!txtEl || !minLength) return false;
+        var theValue = elementsModule.getTxtValue(txtEl);
+        if (theValue == null) return false;
+        var isValid = false;
+        var largerThanMin = false;
+        var lessThanMax = false;
+        if (theValue.length >= minLength) {
+            largerThanMin = true;
+        }
+        if (maxLength) {
+            if (theValue.length <= maxLength) {
+                lessThanMax = true;
+            }
+        }
+        else {
+            lessThanMax = true;
+        }
+        isValid = largerThanMin && lessThanMax;
+        return isValid;
+    }
+    var validateWithRegex = function (txtEl, regex) {
+        if (!txtEl || !regex) return false;
+        var txt = $("#" + txtEl);
+        if (txt.length == 0) return false;
+        var theValue = $.trim(txt.val()).removeSpacesAndDashes();
+        var isValid = false;
+        var theRegex = new RegExp(regex);
+        isValid = theRegex.test(theValue);
+        return isValid;
+    }
+    var massClientValidation = function (args) {
+        if (typeof (Page_ClientValidate) !== 'function') {
+            return false;
+        }
+        Page_ClientValidate();
+        var calcFieldSelector = "div.calc-field";
+        var errorClass = "error";
+
+        var fileUploadValid = document.getElementById(controlsModule.fileUploadClientId).Validators[0].isvalid && document.getElementById(controlsModule.fileUploadClientId).Validators[1].isvalid;
+        var divBeforeUpload = $("#" + controlsModule.fileUploadClientId).closest(calcFieldSelector);
+
+        var captchaValid = document.getElementById(captchaConstants.txtId).Validators[0].isvalid && document.getElementById(captchaConstants.txtId).Validators[1].isvalid;
+        var divBeforeCaptcha = $("#" + captchaConstants.txtId).closest(calcFieldSelector);
+
+        var emailValid = document.getElementById(controlsModule.emailClientId).Validators[0].isvalid && document.getElementById(controlsModule.emailClientId).Validators[1].isvalid;
+        var divBeforeEmail = $("#" + controlsModule.emailClientId).closest(calcFieldSelector);
+
+        if (fileUploadValid) {
+            divBeforeUpload.removeClass(errorClass);
+        }
+        else {
+            divBeforeUpload.addClass(errorClass);
+        }
+
+        if (captchaValid) {
+            divBeforeCaptcha.removeClass(errorClass);
+        }
+        else {
+            divBeforeCaptcha.addClass(errorClass);
+        }
+
+        if (emailValid) {
+            divBeforeEmail.removeClass(errorClass);
+        }
+        else {
+            divBeforeEmail.addClass(errorClass);
+        }
+        return Page_IsValid;
+    }
+    return {
+        validateAccountToIBANConvertForm: validateAccountToIBANConvertForm,
+        validateIBANVerificationForm: validateIBANVerificationForm,
+        massClientValidation: massClientValidation
+    }
+})();
+
+var logger = (function () {
+    var logError = function (errorMessage) {
+        if (console.error) {
+            console.error(errorMessage);
+        }
+    }
+    return {
+        logError: logError
+    }
+})();
+
+var init = (function () {
+    var initSequence = function () {
+        elementsModule.registerEnterToSubmit();
+    }
+    return {
+        initSequence: initSequence
+    }
+})();
+
+_spBodyOnLoadFunctions.push(init.initSequence);

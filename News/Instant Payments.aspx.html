@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+	<head><meta charset="utf-8" /><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /><meta http-equiv="Content-type" content="text/html; charset=utf-8" /><meta http-equiv="Expires" content="0" /><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" /><meta name="format-detection" content="telephone=no" /><meta name="GENERATOR" content="Microsoft SharePoint" /><title>
+	
+	Instant Payments: Remittance with instant priority
+
+</title><meta property="og:title" content="" ><meta property="og:description" content="" >
+<meta property="og:image" content="https://www.winbank.gr/sites/idiwtes/el/PublishingImages/Og/OgWinbank.png?v=1.0" />
+<link rel="shortcut icon" type=image/x-icon href="../favicon.ico@v=1.0"/>
+<link rel="apple-touch-icon" href="https://www.winbank.gr/sites/idiwtes/el/PublishingImages/apple_touch_icons/apple-touch-icon.png?v=1.0">
+<link rel="apple-touch-icon" sizes="72x72" href="https://www.winbank.gr/sites/idiwtes/el/PublishingImages/apple_touch_icons/apple-touch-icon-72x72.png?v=1.0" />
+<link rel="apple-touch-icon" sizes="76x76" href="https://www.winbank.gr/sites/idiwtes/el/PublishingImages/apple_touch_icons/apple-touch-icon-76x76.png?v=1.0">
+<link rel="apple-touch-icon" sizes="114x114" href="https://www.winbank.gr/sites/idiwtes/el/PublishingImages/apple_touch_icons/apple-touch-icon-114x114.png?v=1.0">
+<link rel="apple-touch-icon" sizes="120x120" href="https://www.winbank.gr/sites/idiwtes/el/PublishingImages/apple_touch_icons/apple-touch-icon-120x120.png?v=1.0">
+<link rel="apple-touch-icon" sizes="152x152" href="https://www.winbank.gr/sites/idiwtes/el/PublishingImages/apple_touch_icons/apple-touch-icon-152x152.png?v=1.0">
+<link rel="apple-touch-icon" sizes="167x167" href="https://www.winbank.gr/sites/idiwtes/el/PublishingImages/apple_touch_icons/apple-touch-icon-167x167.png?v=1.0">
+<link rel="apple-touch-icon" sizes="180x180" href="https://www.winbank.gr/sites/idiwtes/el/PublishingImages/apple_touch_icons/apple-touch-icon-180x180.png?v=1.0">
+<link rel="icon" sizes="128x128" href="https://www.winbank.gr/sites/idiwtes/el/PublishingImages/apple_touch_icons/addroid-touch-icon-128x128.png?v=1.0"/>
+<link rel="icon" sizes="192x192" href="https://www.winbank.gr/sites/idiwtes/el/PublishingImages/apple_touch_icons/addroid-touch-icon-192x192.png?v=1.0" />
+
+        <link rel="stylesheet" type="text/css" href="../Themable/Core&#32;Styles/pagelayouts15.css"/>
+<link rel="stylesheet" type="text/css" href="../Themable/corev15.css@rev=2bpHeX9U8DH09TB5zpJcsQ==.css"/>
+
+        
+        <script type="text/javascript" src="../init.js@rev=Xpo7ARBt8xBROO1h5n3s6g=="></script>
+<script type="text/javascript" src="../ScriptResource.axd@d=OUedAq87EE4LoTKq8aEZF-h1-2nsDIRUACzSJKcDxMYmAdnAby9hHFBAJXPltCJ9QcpEWQ44vdYfYreSKsJgZsKv4x7AnDYL6K4V6aKuG_amAg6wKU8NF0jWO50JO7z1YAc1_Sz7HzoYyWZYpXVfCnK8qKJ4Rj6zOtsQAjidDk5QHx9tOXoz7GKymJkar_o30&amp;t=2b48f70a.gz"></script>
+<script type="text/javascript" src="../blank.js@rev=ZaOXZEobVwykPO9g8hq%252F8A=="></script>
+<script type="text/javascript" src="../ScriptResource.axd@d=FGqBGjAVuTorpmp1PFwAAOHj2_Hqnmg9joy8P5EBy_52nMTzURNNuuBxxfWrIpQH27oX9NIp2iIKlu-DKP_B7LVk8paST6W9VPc4xZG399B_H3_kRbFTpQ7SMCoJMmkwgUYPr7KnTB-BH_BlYQqndESpgUJoRbQ9o0PUCqImxvJdMugXO2GJ6cyLNrVNeopM0&amp;t=2b48f70a.gz"></script>
+<script type="text/javascript">RegisterSod("initstrings.js", "\u002f_layouts\u002f15\u002f1033\u002finitstrings.js?rev=S11vfGURQYVuACMEY0tLTg\u00253D\u00253D");</script>
+<script type="text/javascript">RegisterSod("strings.js", "\u002f_layouts\u002f15\u002f1033\u002fstrings.js?rev=xXYZY4hciX287lShPZuClw\u00253D\u00253D");RegisterSodDep("strings.js", "initstrings.js");</script>
+<script type="text/javascript">RegisterSod("sp.init.js", "\u002f_layouts\u002f15\u002fsp.init.js?rev=jvJC3Kl5gbORaLtf7kxULQ\u00253D\u00253D");</script>
+<script type="text/javascript">RegisterSod("sp.res.resx", "\u002f_layouts\u002f15\u002fScriptResx.ashx?culture=en\u00252Dus\u0026name=SP\u00252ERes\u0026rev=yNk\u00252FhRzgBn40LJVP\u00252BqfgdQ\u00253D\u00253D");</script>
+<script type="text/javascript">RegisterSod("sp.ui.dialog.js", "\u002f_layouts\u002f15\u002fsp.ui.dialog.js?rev=3Oh2QbaaiXSb7ldu2zd6QQ\u00253D\u00253D");RegisterSodDep("sp.ui.dialog.js", "sp.init.js");RegisterSodDep("sp.ui.dialog.js", "sp.res.resx");</script>
+<script type="text/javascript">RegisterSod("core.js", "\u002f_layouts\u002f15\u002fcore.js?rev=GpU7vxyOqzS0F9OfEX3CCw\u00253D\u00253D");RegisterSodDep("core.js", "strings.js");</script>
+<script type="text/javascript">RegisterSod("menu.js", "\u002f_layouts\u002f15\u002fmenu.js?rev=cXv35JACAh0ZCqUwKU592w\u00253D\u00253D");</script>
+<script type="text/javascript">RegisterSod("mQuery.js", "\u002f_layouts\u002f15\u002fmquery.js?rev=VYAJYBo5H8I3gVSL3MzD6A\u00253D\u00253D");</script>
+<script type="text/javascript">RegisterSod("callout.js", "\u002f_layouts\u002f15\u002fcallout.js?rev=ryx2n4ePkYj1\u00252FALmcsXZfA\u00253D\u00253D");RegisterSodDep("callout.js", "strings.js");RegisterSodDep("callout.js", "mQuery.js");RegisterSodDep("callout.js", "core.js");</script>
+<script type="text/javascript">RegisterSod("clienttemplates.js", "\u002f_layouts\u002f15\u002fclienttemplates.js?rev=NjHQZTfQs\u00252BiDIjz4PK\u00252FeWg\u00253D\u00253D");RegisterSodDep("clienttemplates.js", "initstrings.js");</script>
+<script type="text/javascript">RegisterSod("sharing.js", "\u002f_layouts\u002f15\u002fsharing.js?rev=XxxHIxIIc8BsW9ikVc6dgA\u00253D\u00253D");RegisterSodDep("sharing.js", "strings.js");RegisterSodDep("sharing.js", "mQuery.js");RegisterSodDep("sharing.js", "clienttemplates.js");RegisterSodDep("sharing.js", "core.js");</script>
+<script type="text/javascript">RegisterSod("suitelinks.js", "\u002f_layouts\u002f15\u002fsuitelinks.js?rev=REwVU5jSsadDdOZlCx4wpA\u00253D\u00253D");RegisterSodDep("suitelinks.js", "strings.js");RegisterSodDep("suitelinks.js", "core.js");</script>
+<script type="text/javascript">RegisterSod("sp.runtime.js", "\u002f_layouts\u002f15\u002fsp.runtime.js?rev=5f2WkYJoaxlIRdwUeg4WEg\u00253D\u00253D");RegisterSodDep("sp.runtime.js", "sp.res.resx");</script>
+<script type="text/javascript">RegisterSod("sp.js", "\u002f_layouts\u002f15\u002fsp.js?rev=qpivgvUSRkZ4OiXMzDldMQ\u00253D\u00253D");RegisterSodDep("sp.js", "sp.runtime.js");RegisterSodDep("sp.js", "sp.ui.dialog.js");RegisterSodDep("sp.js", "sp.res.resx");</script>
+<script type="text/javascript">RegisterSod("userprofile", "\u002f_layouts\u002f15\u002fsp.userprofiles.js?rev=p5tCOm\u00252FlHUwcfll7W3pKNw\u00253D\u00253D");RegisterSodDep("userprofile", "sp.runtime.js");</script>
+<script type="text/javascript">RegisterSod("followingcommon.js", "\u002f_layouts\u002f15\u002ffollowingcommon.js?rev=jWqEDmcjCSPmnQw2ZIfItQ\u00253D\u00253D");RegisterSodDep("followingcommon.js", "strings.js");RegisterSodDep("followingcommon.js", "sp.js");RegisterSodDep("followingcommon.js", "userprofile");RegisterSodDep("followingcommon.js", "core.js");RegisterSodDep("followingcommon.js", "mQuery.js");</script>
+<script type="text/javascript">RegisterSod("profilebrowserscriptres.resx", "\u002f_layouts\u002f15\u002fScriptResx.ashx?culture=en\u00252Dus\u0026name=ProfileBrowserScriptRes\u0026rev=J5HzNnB\u00252FO1Id\u00252FGI18rpRcw\u00253D\u00253D");</script>
+<script type="text/javascript">RegisterSod("sp.ui.mysitecommon.js", "\u002f_layouts\u002f15\u002fsp.ui.mysitecommon.js?rev=Ua8qmZSU9nyf53S7PEyJwQ\u00253D\u00253D");RegisterSodDep("sp.ui.mysitecommon.js", "sp.init.js");RegisterSodDep("sp.ui.mysitecommon.js", "sp.runtime.js");RegisterSodDep("sp.ui.mysitecommon.js", "userprofile");RegisterSodDep("sp.ui.mysitecommon.js", "profilebrowserscriptres.resx");</script>
+<script type="text/javascript">RegisterSod("browserScript", "\u002f_layouts\u002f15\u002fie55up.js?rev=0R4dbpInVlmjoVSw2Gglmw\u00253D\u00253D");RegisterSodDep("browserScript", "strings.js");</script>
+<script type="text/javascript">RegisterSod("inplview", "\u002f_layouts\u002f15\u002finplview.js?rev=iMf5THfqukSYut7sl9HwUg\u00253D\u00253D");RegisterSodDep("inplview", "strings.js");RegisterSodDep("inplview", "core.js");RegisterSodDep("inplview", "sp.js");</script>
+<link type="text/xml" rel="alternate" href="https://www.winbank.gr/sites/idiwtes/en/_vti_bin/spsdisco.aspx" />
+            
+            
+	
+	
+	
+
+            <link rel="canonical" href="Instant&#32;Payments.aspx.html" />
+            
+            
+        <span id="DeltaSPWebPartManager">
+            
+        </span><link rel="stylesheet" href="../print.css" media="print" /><link rel="stylesheet" href="../owl.carousel.css" media="screen, handheld, projection, tv" /><link rel="stylesheet" href="../owl.theme.css" media="screen, handheld, projection, tv" /><link rel="stylesheet" href="../owl.transitions.css" media="screen, handheld, projection, tv" /><link rel="stylesheet" href="../fonts.css@v=1.1.css" media="screen, handheld, projection, tv" /><link rel="stylesheet" href="../screen.css@v=1.88.css" media="screen, handheld, projection, tv" /><link rel="stylesheet" href="../additional.css@v=1.21.css" />
+
+        
+		<!--[if lt IE 9]><script src="/_layouts/15/SharePoint2013.LoginPortal/js/html5shiv-printshiv.js"></script><![endif]-->
+
+        <script src="../jquery-1.12.4.min.js"></script>
+		<script src="../jquery.payment.js"></script>
+        <script src="../jquery.menu-aim.js"></script>
+		<script src="../fastclick.js"></script>
+		<script src="../owl.carousel.min.js"></script> 
+		<script src="../modernizr.js"></script> 
+		<script src="../jquery.validate.min.js"></script>
+        <script src="../detect.min.js"></script>
+		<script src="../common.js@v=1.45"></script>
+	<script>
+	    function ProcessImn()
+	    { }
+	    function ProcessImnMarkers()
+	    { }
+	</script>
+	</head>
+	<body onhashchange="if (typeof(_spBodyOnHashChange) != 'undefined') _spBodyOnHashChange();">
+        <form method="post" action="Instant&#32;Payments.aspx.html" onsubmit="javascript:return WebForm_OnSubmit();" id="aspnetForm">
+<div class="aspNetHidden">
+<input type="hidden" name="_wpcmWpid" id="_wpcmWpid" value="" />
+<input type="hidden" name="wpcmVal" id="wpcmVal" value="" />
+<input type="hidden" name="MSOWebPartPage_PostbackSource" id="MSOWebPartPage_PostbackSource" value="" />
+<input type="hidden" name="MSOTlPn_SelectedWpId" id="MSOTlPn_SelectedWpId" value="" />
+<input type="hidden" name="MSOTlPn_View" id="MSOTlPn_View" value="0" />
+<input type="hidden" name="MSOTlPn_ShowSettings" id="MSOTlPn_ShowSettings" value="False" />
+<input type="hidden" name="MSOGallery_SelectedLibrary" id="MSOGallery_SelectedLibrary" value="" />
+<input type="hidden" name="MSOGallery_FilterString" id="MSOGallery_FilterString" value="" />
+<input type="hidden" name="MSOTlPn_Button" id="MSOTlPn_Button" value="none" />
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__REQUESTDIGEST" id="__REQUESTDIGEST" value="0x1C821D2FDCDFAAC39849574E023C7FF88D84ECA6F94B8DE44FFA5D5FAB34E4C16CF2A3D41B121876452B22D2539DE345C2FDDF5FD5D7EC9440121DEF4F583A03,29 Jun 2022 12:48:56 -0000" />
+<input type="hidden" name="MSOSPWebPartManager_DisplayModeName" id="MSOSPWebPartManager_DisplayModeName" value="Browse" />
+<input type="hidden" name="MSOSPWebPartManager_ExitingDesignMode" id="MSOSPWebPartManager_ExitingDesignMode" value="false" />
+<input type="hidden" name="MSOWebPartPage_Shared" id="MSOWebPartPage_Shared" value="" />
+<input type="hidden" name="MSOLayout_LayoutChanges" id="MSOLayout_LayoutChanges" value="" />
+<input type="hidden" name="MSOLayout_InDesignMode" id="MSOLayout_InDesignMode" value="" />
+<input type="hidden" name="_wpSelected" id="_wpSelected" value="" />
+<input type="hidden" name="_wzSelected" id="_wzSelected" value="" />
+<input type="hidden" name="MSOSPWebPartManager_OldDisplayModeName" id="MSOSPWebPartManager_OldDisplayModeName" value="Browse" />
+<input type="hidden" name="MSOSPWebPartManager_StartWebPartEditingName" id="MSOSPWebPartManager_StartWebPartEditingName" value="false" />
+<input type="hidden" name="MSOSPWebPartManager_EndWebPartEditing" id="MSOSPWebPartManager_EndWebPartEditing" value="false" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKMTY0NTM1MjkwNA9kFgJmD2QWAgIBD2QWBgIBD2QWCAIHD2QWAmYPZBYCAgEPFgIeE1ByZXZpb3VzQ29udHJvbE1vZGULKYgBTWljcm9zb2Z0LlNoYXJlUG9pbnQuV2ViQ29udHJvbHMuU1BDb250cm9sTW9kZSwgTWljcm9zb2Z0LlNoYXJlUG9pbnQsIFZlcnNpb249MTUuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49NzFlOWJjZTExMWU5NDI5YwFkAgkPFgIfAAsrBAFkAgwPFgIfAAsrBAFkAhoPZBYEAgEPZBYCAgUPFgIfAAsrBAFkAgMPZBYCZg9kFgJmDzwrAAYAZAIGD2QWBAIFD2QWAgICD2QWAgIFD2QWAgIDDxYCHgdWaXNpYmxlaBYCZg9kFgQCAg9kFgYCAQ8WAh8BaGQCAw8WAh8BaGQCBQ8WAh8BaGQCAw8PFgIeCUFjY2Vzc0tleQUBL2RkAg8PZBYCAgIPZBYEAgUPFgIfAAsrBAFkAgkPFgIfAAsrBAFkAiIPZBYCAgEPFgIfAAsrBAFkZIW0xvlp7IuurnsYfZBEvP4oH1ccw6f8ULiTWNW50U1K" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="../WebResource.axd@d=KGE-0yhvocC_BlTjValHo1JArZktBb0iHH-3qsxVRhEAqrWfTZbEMi0MtCHNF4svnb5hHoWVUVTfb_TG2MWC041IQ_maP6xF_QBngGvYC_81&amp;t=636765251060000000" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+//<![CDATA[
+var MSOWebPartPageFormName = 'aspnetForm';
+var g_presenceEnabled = false;
+var g_wsaEnabled = false;
+var g_wsaQoSEnabled = false;
+var g_wsaQoSDataPoints = [];
+var g_wsaLCID = 1033;
+var g_wsaListTemplateId = 850;
+var g_wsaSiteTemplateId = 'BLANKINTERNET#2';
+var _fV4UI=true;var _spPageContextInfo = {webServerRelativeUrl: "\u002fsites\u002fidiwtes\u002fen", webAbsoluteUrl: "https:\u002f\u002fwww.winbank.gr\u002fsites\u002fidiwtes\u002fen", siteAbsoluteUrl: "https:\u002f\u002fwww.winbank.gr\u002fsites\u002fidiwtes", serverRequestPath: "\u002fsites\u002fidiwtes\u002fen\u002fPages\u002fNews\u002fInstant Payments.aspx", layoutsUrl: "_layouts\u002f15", webTitle: "English", webTemplate: "53", tenantAppVersion: "0", isAppWeb: false, webLogoUrl: "_layouts\u002f15\u002fimages\u002fsiteicon.png", webLanguage: 1033, currentLanguage: 1033, currentUICultureName: "en-US", currentCultureName: "en-US", clientServerTimeDelta: new Date("2022-06-29T12:48:56.4647742Z") - new Date(), siteClientTag: "3654$$15.0.5085.1000", crossDomainPhotosEnabled:false, webUIVersion:15, webPermMasks:{High:0,Low:196609},pageListId:"{f19d3670-cf9b-45f1-96f7-492a6f621c51}",pageItemId:285, pagePersonalizationScope:1, alertsEnabled:true, siteServerRelativeUrl: "\u002fsites\u002fidiwtes", allowSilverlightPrompt:'True'};var L_Menu_BaseUrl="/sites/idiwtes/en";
+var L_Menu_LCID="1033";
+var L_Menu_SiteTheme="null";
+document.onreadystatechange=fnRemoveAllStatus; function fnRemoveAllStatus(){removeAllStatus(true)};//]]>
+</script>
+
+<script src="../blank.js@rev=ZaOXZEobVwykPO9g8hq%252F8A==" type="text/javascript"></script>
+<script type="text/javascript">
+//<![CDATA[
+(function(){
+
+        if (typeof(_spBodyOnLoadFunctions) === 'undefined' || _spBodyOnLoadFunctions === null) {
+            return;
+        }
+        _spBodyOnLoadFunctions.push(function() 
+        {
+          ExecuteOrDelayUntilScriptLoaded(
+            function()
+            {
+              var pairs = SP.ScriptHelpers.getDocumentQueryPairs();
+              var followDoc, itemId, listId, docName;
+              for (var key in pairs)
+              {
+                if(key.toLowerCase() == 'followdocument') 
+                  followDoc = pairs[key];
+                else if(key.toLowerCase() == 'itemid') 
+                  itemId = pairs[key];
+                else if(key.toLowerCase() == 'listid') 
+                  listId = pairs[key];
+                else if(key.toLowerCase() == 'docname') 
+                  docName = decodeURI(pairs[key]);
+              } 
+
+              if(followDoc != null && followDoc == '1' && listId!=null && itemId != null && docName != null)
+              {
+                SP.SOD.executeFunc('followingcommon.js', 'FollowDocumentFromEmail', function() 
+                { 
+                  FollowDocumentFromEmail(itemId, listId, docName);
+                });
+              }
+
+            }, 'SP.init.js');
+
+        });
+    })();(function(){
+
+        if (typeof(_spBodyOnLoadFunctions) === 'undefined' || _spBodyOnLoadFunctions === null) {
+            return;
+        }
+        _spBodyOnLoadFunctions.push(function() {
+
+            if (typeof(SPClientTemplates) === 'undefined' || SPClientTemplates === null || (typeof(APD_InAssetPicker) === 'function' && APD_InAssetPicker())) {
+                return;
+            }
+
+            var renderFollowFooter = function(renderCtx,  calloutActionMenu)
+            {
+                if (renderCtx.ListTemplateType == 700) 
+                    myDocsActionsMenuPopulator(renderCtx, calloutActionMenu);
+                else
+                    CalloutOnPostRenderTemplate(renderCtx, calloutActionMenu);
+
+                var listItem = renderCtx.CurrentItem;
+                if (typeof(listItem) === 'undefined' || listItem === null) {
+                    return;
+                }
+                if (listItem.FSObjType == 0) {
+                    calloutActionMenu.addAction(new CalloutAction({
+                        text: Strings.STS.L_CalloutFollowAction,
+                        tooltip: Strings.STS.L_CalloutFollowAction_Tooltip,
+                        onClickCallback: function (calloutActionClickEvent, calloutAction) {
+                            var callout = GetCalloutFromRenderCtx(renderCtx);
+                            if (!(typeof(callout) === 'undefined' || callout === null))
+                                callout.close();
+                            SP.SOD.executeFunc('followingcommon.js', 'FollowSelectedDocument', function() { FollowSelectedDocument(renderCtx); });
+                        }
+                    }));
+                }
+            };
+
+            var registerOverride = function(id) {
+                var followingOverridePostRenderCtx = {};
+                followingOverridePostRenderCtx.BaseViewID = 'Callout';
+                followingOverridePostRenderCtx.ListTemplateType = id;
+                followingOverridePostRenderCtx.Templates = {};
+                followingOverridePostRenderCtx.Templates.Footer = function(renderCtx) {
+                    var  renderECB;
+                    if (typeof(isSharedWithMeView) === 'undefined' || isSharedWithMeView === null) {
+                        renderECB = true;
+                    } else {
+                        var viewCtx = getViewCtxFromCalloutCtx(renderCtx);
+                        renderECB = !isSharedWithMeView(viewCtx);
+                    }
+                    return CalloutRenderFooterTemplate(renderCtx, renderFollowFooter, renderECB);
+                };
+                SPClientTemplates.TemplateManager.RegisterTemplateOverrides(followingOverridePostRenderCtx);
+            }
+            registerOverride(101);
+            registerOverride(700);
+        });
+    })();if (typeof(DeferWebFormInitCallback) == 'function') DeferWebFormInitCallback();function WebForm_OnSubmit() {
+UpdateFormDigest('\u002fsites\u002fidiwtes\u002fen', 1440000);if (typeof(_spFormOnSubmitWrapper) != 'undefined') {return _spFormOnSubmitWrapper();} else {return true;};
+return true;
+}
+//]]>
+</script>
+
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="D0AC685D" />
+</div>
+        <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager', 'aspnetForm', [], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+        <div>
+	
+            <div id="TurnOnAccessibility" style="display: none" class="s4-notdlg noindex">
+                <a id="linkTurnOnAcc" href="Instant&#32;Payments.aspx.html#" class="ms-accessible ms-acc-button" onclick="SetIsAccessibilityFeatureEnabled(true);UpdateAccessibilityUI();document.getElementById('linkTurnOffAcc').focus();return false;">
+                    Turn on more accessible mode
+                </a>
+            </div>
+            <div id="TurnOffAccessibility" style="display: none" class="s4-notdlg noindex">
+                <a id="linkTurnOffAcc" href="Instant&#32;Payments.aspx.html#" class="ms-accessible ms-acc-button" onclick="SetIsAccessibilityFeatureEnabled(false);UpdateAccessibilityUI();document.getElementById('linkTurnOnAcc').focus();return false;">
+                    Turn off more accessible mode
+                </a>
+            </div>
+        
+</div>
+        <div id="ms-designer-ribbon">
+            <div>
+	
+	<div id="s4-ribbonrow" style="visibility:hidden;display:none"></div>
+
+</div>
+
+
+        </div>
+		<div class="main-wrapper">
+			<div class="go-top ic-dropdown"></div> 
+			    <!-- alert box must be display only in welcome start-->
+            	
+
+				
+			    <!-- alert box must be display only in welcome end-->
+
+			<!-- header Part start-->
+			<div class="header">
+				<div class="wrapper">
+					<div class="col-12">
+						<div class="left logo">
+							<!-- winbank Image start-->
+							<h1><a id="ctl00_logowinbank" href="https://www.winbank.gr/sites/idiwtes/en/">
+<img src="../Images/winbankLogoΥ.svg" alt="winbank" />
+</a></h1>
+							<!-- winbank Image end-->
+						</div>
+						<div class="right">
+							<!-- Top menu start-->
+			                
+
+<ul class="header-tools">
+    <li tabindex="0" class="loginType desktop">
+        <div class="header-link">
+            <span id="ctl00_ctl59_spFirstLinkIconD" class="icon ic-corporate"></span>
+            <a href="https://www.winbank.gr/sites/corporate/en/Pages/default.aspx"><span class="text">Login Business</span></a>
+        </div>
+    </li>
+    <li tabindex="0" class="loginType mobile">
+        <div class="header-link">
+            <span id="ctl00_ctl59_spFirstLinkIcon" class="icon ic-corporate"></span>
+            <span class="text">Login Business</span>
+        </div>
+        <ul class="header-tools-second center">
+            <li>
+                 <a href="https://www.winbank.gr/sites/corporate/en/Pages/default.aspx">Login Business</a>
+            </li>
+            
+        </ul>
+    </li>
+    <li tabindex="0">
+        <div class="header-link">
+            <span class="icon ic-contact"></span>
+            <span class="text">Contact us</span>
+        </div>
+        <div class="header-tools-second center border-cols contactMenu">
+            <div class="col col1">
+                <div class="contact-item">
+                    <span class="ic-email"></span>
+                    <div>
+
+                        <a href="mailto:support@winbank.gr">support@winbank.gr</a>
+                        <span class="white">
+                            Contact e-mail</span>
+                    </div>
+                </div>
+            </div>
+            <div class="border"></div>
+            <div class="col col2">
+                <div class="contact-item">
+                    <span class="ic-tilefono"></span>
+                    <div>
+                        <a href="tel:+302103288000">+30 210 3288000</a>
+                        <span class="white">Contact number</span>
+                        <div class="tooltip top-left">
+                            <span class="ic-info2 open-tooltip"></span>
+                            <div class="main">
+                                <div class="arrow icon"></div>
+                                Available 24x7
+                            </div>
+                        </div>           
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+    <li tabindex="0">
+        <div class="header-link">
+            <span class="icon ic-tools"></span>
+            <span class="text">Useful Tools</span>
+        </div>
+        <ul class="header-tools-second left toolsMenu">
+            <!-- list links  start-->
+            
+                    <li><div class="ExternalClassDCC47E7EBAEA43B983AB223B51012D46">
+   <a href="../Structure/WinbankIBANCalculator.aspx.html" target="_blank">IBAN Calculator</a></div></li>
+                
+                    <li><a href="http&#58;//www.piraeusbank.gr/en/idiwtes/trapezikes-ypiresies/kathimerines-synallages/emvasmata/ypologistis-emvasmatos" target="_blank">Remittances Fee Calculator</a></li>
+                
+                    <li><a href="http&#58;//www.piraeusbank.gr/en/idiwtes/katatheseis/katathetiki-lysi" target="_blank">Find the best solution for your money</a></li>
+                
+                    <li><a href="http&#58;//www.piraeusbank.gr/en/idiwtes/kartes/katallili-propliromeni-karta" target="_blank">Find the Prepaid Card that best suits your needs</a></li>
+                
+                    <li><a href="http&#58;//www.piraeusbank.gr/en/idiwtes/kartes/ypologistis-metaforas-ypoloipou-karton" target="_blank">Credit Balance Transfer Calculator</a></li>
+                
+                    <li><a href="http&#58;//www.piraeusbank.gr/en/idiwtes/green-banking/fotovoltaika-calculator" target="_blank">Photovoltaic Performance Calculator</a></li>
+                
+            <!-- list links  end-->
+        </ul>
+    </li>
+    <li>
+        <!-- Variation Languages start -->
+        <div class="header-link">
+            <span class="icon ic-language"></span>
+            <span class="text">English</span>
+        </div>
+        <ul class="header-tools-second right">
+            
+                    <li>
+                        <a title="Ελληνικά" href="https://www.winbank.gr/sites/idiwtes/el/Pages/News/Instant%20Payments.aspx">
+                            <span>Ελληνικά</span></a>
+                    </li>
+                
+        </ul>
+        <!-- Variation Languages end -->
+    </li>
+</ul>
+
+
+							<!-- Top menu end-->
+							<div class="logo right">
+								<!-- Image Link to Bank site Bank Logo dynamic start -->
+								
+ <a href="https://www.piraeusbank.gr/en" target="_blank" title="Piraeus Bank"><img src="../Images/piraeusbank.svg" alt="Piraeus Bank" /></a>
+
+
+
+								<!-- Image Link to Bank site Bank Logo dynamic end -->
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- header Part end-->
+			<!-- Main Content Part Start-->
+			<div data-name="ContentPlaceHolderMain" class="contentplaceholder">
+				<span id="DeltaPlaceHolderMain">
+					
+
+    
+
+    <div class="gray content">
+	<div class="wrapper">
+		<div class="col-12">
+			<div class="title date-title">
+				<div class="news-cat">
+<i class="ic-winbank ic"></i>
+</div>
+				<h1>
+			        Instant Payments: Remittance with instant priority
+				</h1>
+				<div class="clearfix"></div>
+				<div class="border"></div>
+			</div>
+			<div class="content-tools">
+				<a href="https://www.winbank.gr/sites/idiwtes/en" class="back"><span class="ic-back arrow"></span><span class="text">Back</span></a> 
+
+			</div>
+		</div>
+		<div class="col-10 m-col-12">
+            <div id="ctl00_PlaceHolderMain_ctl03_label" style='display:none'>Page Content</div><div id="ctl00_PlaceHolderMain_ctl03__ControlWrapper_RichHtmlField" class="ms-rtestate-field" style="display:inline" aria-labelledby="ctl00_PlaceHolderMain_ctl03_label"><p>Now you may transfer funds within Greece or to other countries in Single Euro Payments Area (SEPA) instantly and at any time you wish (24/7/365). Funds become available to the beneficiary in 10 seconds.<br><br>
+<a href="https&#58;//www.piraeusbank.gr/en/idiwtes/trapezikes-ypiresies/kathimerines-synallages/emvasmata/metafora-xrimaton-emvasmata-meso-instant-payments" target="_blank">Learn more</a> 
+</p><p></p></div>
+		</div>
+	</div>
+</div>
+
+<div style='display:none' id='hidZone'><menu class="ms-hide">
+	<ie:menuitem id="MSOMenu_Help" iconsrc="/_layouts/15/images/HelpIcon.gif" onmenuclick="MSOWebPartPage_SetNewWindowLocation(MenuWebPart.getAttribute('helpLink'), MenuWebPart.getAttribute('helpMode'))" text="Help" type="option" style="display:none">
+
+	</ie:menuitem>
+</menu></div>
+				</span>
+			</div>
+
+			<!-- Main Content Part End-->
+			<!-- Footer start-->
+			
+    <div class="bot-button ic-chatBot en" id="botButton">
+		<span class="text">How can I help?</span>
+	</div>
+	<div class="botContainer hide" id="botContainer">
+			<div class="botWrapper">
+			<div class="botHeader">
+				<div class="botTitle">
+					<span class="ic-chatBot"></span>
+					<span>Virtual Assistant</span>
+				</div>
+				<div class="botActions">
+					<span class="botAction botHelp ic-helpBot" id="botHelp"></span>
+					<span class="botAction botClose" id="botClose"></span>
+				</div>
+			</div>
+			<div class="botMain">
+                <input type="hidden" id="hidBotUrl" value="https://botchatprelogin.piraeusbank.gr/bot?locale=en-GB&pfm=true">
+				<iframe id="bot-iframe"
+						allow="geolocation; microphone">
+				</iframe>
+			</div>
+		</div>
+	</div>
+
+<div class="footer">
+	<div class="wrapper">
+		<div class="col-12">
+			<div class="right alcenter">
+				<p>winbank @ social media</p>
+				<ul class="social">
+					<li><a href="https://www.facebook.com/winbankPage" target="_blank" class="ic-facebook"></a></li>
+					<li><a href="https://twitter.com/winbank_tweets" target="_blank" class="ic-twitter"></a></li>
+					<li><a href="https://www.youtube.com/user/winbankTV" target="_blank" class="ic-youtube"></a></li>
+				</ul>
+			</div>
+			<div class="left footer-menu">
+				<div class="logo">
+					<a href="https://www.winbank.gr/sites/idiwtes/EN/Pages/Content/iso.aspx"><img src="../Images/IsoLogo_white.png" border="0" alt=""/></a>
+				</div>
+				<div class="footer-text">
+					<ul>
+						<li><a href="https://www.winbank.gr/sites/idiwtes/EN/Pages/Content/PrivacyPolicy.aspx">Privacy Policy</a></li>
+                        <li><a href="https://www.winbank.gr/sites/idiwtes/EN/Pages/Content/CostomerComplaints.aspx">Customer Complaints</a></li>
+					</ul>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+			<!-- Footer end-->
+		</div>
+
+                        <div id="DeltaFormDigest">
+	
+                
+                    <script type="text/javascript">//<![CDATA[
+        var formDigestElement = document.getElementsByName('__REQUESTDIGEST')[0];
+        if (!((formDigestElement == null) || (formDigestElement.tagName.toLowerCase() != 'input') || (formDigestElement.type.toLowerCase() != 'hidden') ||
+            (formDigestElement.value == null) || (formDigestElement.value.length <= 0)))
+        {
+            formDigestElement.value = '0x1C821D2FDCDFAAC39849574E023C7FF88D84ECA6F94B8DE44FFA5D5FAB34E4C16CF2A3D41B121876452B22D2539DE345C2FDDF5FD5D7EC9440121DEF4F583A03,29 Jun 2022 12:48:56 -0000';
+            g_updateFormDigestPageLoaded = new Date();
+        }
+        //]]>
+        </script>
+
+                
+
+            
+</div>
+
+
+        
+
+<script type="text/javascript">
+//<![CDATA[
+var _spFormDigestRefreshInterval = 1440000;window.g_updateFormDigestPageLoaded = new Date(); window.g_updateFormDigestPageLoaded.setDate(window.g_updateFormDigestPageLoaded.getDate() -5);var _fV4UI = true;
+function _RegisterWebPartPageCUI()
+{
+    var initInfo = {editable: false,isEditMode: false,allowWebPartAdder: false,listId: "{f19d3670-cf9b-45f1-96f7-492a6f621c51}",itemId: 285,recycleBinEnabled: true,enableMinorVersioning: true,enableModeration: false,forceCheckout: true,rootFolderUrl: "\u002fsites\u002fidiwtes\u002fen\u002fPages",itemPermissions:{High:0,Low:196609}};
+    SP.Ribbon.WebPartComponent.registerWithPageManager(initInfo);
+    var wpcomp = SP.Ribbon.WebPartComponent.get_instance();
+    var hid;
+    hid = document.getElementById("_wpSelected");
+    if (hid != null)
+    {
+        var wpid = hid.value;
+        if (wpid.length > 0)
+        {
+            var zc = document.getElementById(wpid);
+            if (zc != null)
+                wpcomp.selectWebPart(zc, false);
+        }
+    }
+    hid = document.getElementById("_wzSelected");
+    if (hid != null)
+    {
+        var wzid = hid.value;
+        if (wzid.length > 0)
+        {
+            wpcomp.selectWebPartZone(null, wzid);
+        }
+    }
+};
+function __RegisterWebPartPageCUI() {
+ExecuteOrDelayUntilScriptLoaded(_RegisterWebPartPageCUI, "sp.ribbon.js");}
+_spBodyOnLoadFunctionNames.push("__RegisterWebPartPageCUI");var __wpmExportWarning='This Web Part Page has been personalized. As a result, one or more Web Part properties may contain confidential information. Make sure the properties contain information that is safe for others to read. After exporting this Web Part, view properties in the Web Part description file (.WebPart) by using a text editor such as Microsoft Notepad.';var __wpmCloseProviderWarning='You are about to close this Web Part.  It is currently providing data to other Web Parts, and these connections will be deleted if this Web Part is closed.  To close this Web Part, click OK.  To keep this Web Part, click Cancel.';var __wpmDeleteWarning='You are about to permanently delete this Web Part.  Are you sure you want to do this?  To delete this Web Part, click OK.  To keep this Web Part, click Cancel.';var g_clientIdDeltaPlaceHolderMain = "DeltaPlaceHolderMain";
+//]]>
+</script>
+</form>
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+	</body>
+</html>

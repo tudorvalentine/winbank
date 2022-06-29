@@ -1,0 +1,56 @@
+﻿@media only screen {
+    #ms-designer-ribbon * {font-family: "Segoe UI Light","Segoe UI","Segoe",Tahoma,Helvetica,Arial,sans-serif;font-size: 13px;}
+    #ms-designer-ribbon img {max-width: none;}
+    #ms-designer-ribbon *, #ms-designer-ribbon *::after, #ms-designer-ribbon *::before {-webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box;}
+    #ms-designer-ribbon ul li {list-style-type: none;list-style-image: none;}
+    #DeltaWebPartAdderUpdatePanelContainer {z-index: 80;}
+    .ms-webpart-chrome input[type='checkbox'], .ms-webpart-chrome input[type='radio'] {height: 13px;width: 13px;line-height: normal;-webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box;}
+    .ms-webpart-chrome {font-size: 16px;line-height: normal;}
+    h2.ms-webpart-titleText {font-size: 20px;}
+    span.ms-core-menu-title {font-size: 14px;}
+    .ms-cui-menu ul li {font-size: 14px;}
+    .ms-webpart-menuArrowSpan {-webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box;}
+    .js-webpart-menuCell {-webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box;}
+    .ms-webpart-menuLink {-webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box;}
+}
+.header-tools-second.right {min-width: 152px;}
+iframe.ifpreset{height: 588px;padding:0;}
+/*@media only screen and (min-width:458px) and (max-width: 701px){
+    iframe.ifpreset {height: 510px;}
+}*/
+@media only screen and (min-width:354px) and (max-width: 457px){
+    iframe.ifpreset {height: 633px;}
+}
+@media only screen and (max-width: 353px){
+    iframe.ifpreset {height: 640px;}
+}
+iframe.iforeg{height: 950px;padding:0;}
+@media only screen and (max-width: 760px) {
+    iframe.iforeg {height: 1600px;}
+}
+iframe.ifIBAN{height: 580px;}
+@media only screen and (min-width: 701px) and (max-width: 980px) {
+    .header-tools-second.right {min-width: 132px;}
+}
+@media only screen and (max-width: 701px) {
+    .ms-webpart-zone {display: inline-block;}
+}
+@media only screen and (min-width: 441px) and (max-width: 701px) {
+    iframe.ifIBAN{height: 580px;}
+}
+@media only screen and (max-width: 440px) {
+    iframe.ifIBAN{height: 740px;}
+}
+@media only screen and (min-width: 980px) {
+    .ms-webpart-chrome img {max-width: none;-webkit-box-sizing: content-box;-moz-box-sizing: content-box;box-sizing: content-box;}
+}
+body {overflow: auto;overflow-y: scroll;}
+.promo-section input[type=submit]:hover {background-color: #f5b632;border: solid #ababab;}
+.header-tools-second > li > div[class^="ExternalClass"] > a{color:#fff;display:block;line-height: 24px;padding:8px 0;text-decoration:none;}
+.no-touch .header-tools-second > li > div[class^="ExternalClass"] > a:hover, .header-tools-second > li > div[class^="ExternalClass"] > a:active, .header-tools-second > li > div[class^="ExternalClass"] > a:focus{color:#FCB813;outline:none;}
+.red-border {border: 2px solid #cc3333 !important;}
+.hidden {visibility:hidden;}
+.ms-rtestate-field p, p.ms-rteElement-P {line-height: 24px;margin: 0 0 16px;}
+@media only screen and (min-width:701px) {.ms-rtestate-field .nomargin p {margin-bottom: 0;}}
+#status_preview{display:none;}
+.ms-rtestate-field .caption p {margin-bottom: 24px;}

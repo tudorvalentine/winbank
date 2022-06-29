@@ -1,0 +1,70 @@
+body {
+  font: normal 12pt Arial, sans-serif;
+  color: #000;
+  line-height: 1.5;
+}
+
+a {
+  color: #000;
+}
+a img {
+  border: 0;
+}
+a:link:after, a:visited:after, a:link::after, a:visited::after {
+  content: "";
+  font-size: smaller;
+}
+
+.header {
+  float: left;
+  width: 100%;
+}
+.header .left.logo {
+  float: left;
+  width: 200px;
+}
+.header .right {
+  float: right;
+  width: 100px;
+}
+
+.tabs.content-tabs,
+.news-list .sliderBlock,
+.acc-item {
+  padding-bottom: 30px;
+}
+
+.tab .print-show,
+.acc-head {
+  font-weight: bold;
+}
+
+.print-show,
+.tabs-content .tab {
+  display: block;
+}
+
+.tab .print-show {
+  font-size: 23px;
+}
+
+.content-tabs .tabs-header,
+.calc-wrap .buttonsWrap,
+.calc,
+.more-row div,
+a.back,
+.tab-row .img img,
+.footer .right,
+.footer .logo,
+.footer ul,
+.hp-section img,
+.page-promo img,
+.header-tools {
+  display: none;
+}
+
+.content-tabs .tabs-content .tab {
+  padding-bottom: 30px;
+}
+
+/*# sourceMappingURL=print.css.map */
